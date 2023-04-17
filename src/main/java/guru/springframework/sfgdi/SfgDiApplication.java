@@ -4,9 +4,8 @@ import guru.springframework.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan({"guru.springframework.sfgdi", "guru.springframework.pets"})
+//@ComponentScan({"guru.springframework.sfgdi", "guru.springframework.pets"})	// no longer needed d/t adding "guru.springframework.pets" to configuration file directly
 @SpringBootApplication
 public class SfgDiApplication {
 
