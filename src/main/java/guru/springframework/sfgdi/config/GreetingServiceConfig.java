@@ -5,11 +5,9 @@ import guru.springframework.pets.PetServiceFactory;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
+@ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -53,10 +51,10 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
-    @Bean   // common to use with third party objects
-    ConstructorGreetingService constructorGreetingService() {   // method name becomes name of bean
-        return new ConstructorGreetingService();
-    }
+//    @Bean   // common to use with third party objects     // see sfgdi-config.xml for config
+//    ConstructorGreetingService constructorGreetingService() {   // method name becomes name of bean
+//        return new ConstructorGreetingService();
+//    }
 
     @Bean
     PropertyInjectedGreetingService propertyInjectedGreetingService() {
